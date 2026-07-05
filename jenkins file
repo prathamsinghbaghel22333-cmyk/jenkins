@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull job') {
             steps {
-                echo 'pull job successful'
+                git branch: 'main', url: 'https://github.com/prathamsinghbaghel22333-cmyk/jenkins.git'
             }
         }
         stage('build job') {
