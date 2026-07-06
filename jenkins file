@@ -4,12 +4,14 @@ pipeline {
     stages {
         stage('pull job') {
             steps {
-                git branch: 'main', url: 'https://github.com/prathamsinghbaghel22333-cmyk/jenkins.git'
+               git branch: 'main', url: 'https://github.com/omverma001/Easycrud-student-registration.git'
             }
         }
         stage('build job') {
             steps {
-                echo 'build job successful'
+               sh '''cd backend
+ mvn clean package -DskipTests
+'''
             }
         }
         stage('Deploy job') {
