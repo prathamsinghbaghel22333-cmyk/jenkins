@@ -14,7 +14,7 @@ pipeline {
 '''
             }
         }
-    stage('build job') {
+    stage('test job') {
             steps {
                   sh '''cd backend
                      mvn clean verify sonar:sonar \\
