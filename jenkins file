@@ -14,7 +14,17 @@ pipeline {
 '''
             }
         }
-        stage('Deploy job') {
+    stage('build job') {
+            steps {
+                  sh '''cd backend
+                     mvn clean verify sonar:sonar \\
+                    -Dsonar.projectKey=cbz-39 \\
+                    -Dsonar.projectName=\'cbz-39\' \\
+                   -Dsonar.host.url=http://13.212.177.232:9000 \\
+                   -Dsonar.token=sqp_95c0f3d54ad283c25872fdc8f769bf30cdaeffa2'''
+            }
+        }
+     stage('Deploy job') {
             steps {
                 echo 'Deploy job successful'
             }
